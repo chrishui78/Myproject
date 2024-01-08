@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+.form-s {
+  width: 300px;
+  height: 44px;
+  border-radius: 5px;
+  flex-direction: row;
+  align-items: center;
+}
+.add-to-cart {
+    
+    top:50%;
+    background-color:#2792bde0;
+    color: #fff;
+    border:none;
+    border-radius:10px;
+    
+}
+.add-to-cart :focus {
+    outline-color: transparent;
+    outline-style:solid;
+    box-shadow: 0 0 0 4px #5a01a7;
+    transition: 0.7s;
+}
+.add-to-cart :active {
+    background-color: #ffbf00;
+}
+
+</style>
+{% load static %}
+{% load cart %}
+{% load custom_filter %}
+<!-- filter -->
+
+<div class="container">
+<hr>
+<div class="d-flex align-items-center">
+    <div class="p-2 flex-grow-1 "><a href="store" class="btn">All Products</a></div>
+    <div class="p-2 flex-grow-1">
+        <div class="dropdown">
+            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+              Acidity
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li>        
+                {% for category in categories %}
+                <a class="dropdown-item" href="store?category={{category.id}}">{{category.name}}</a>
+                {% endfor %}
+            </li>
+            </ul>
+          </div>
+    </div>
+    <div class="d-flex flex-sm-row-reverse">
+        <form class="d-flex form-s" role="search" method="POST">
+        {% csrf_token %}
+        <input
+           class="form-control me-2"
+           type="search"
+           placeholder="Search"
+           name="search"
+           required aria-label="Search"
+           style="height: 65px; margin-top: 35px;"
+        >
+        <button class="btn btn-outline-dark" type="submit">
+        <i class="fa fa-search" aria-hidden="true"></i></button>
+    </form></div>
+  </div>
+
+<hr>
+</div>
+
+<!-- products -->
+<div id='products' class="col-lg-9 mx-auto">
+    <div class="row mx-auto">
+        {% for product in products %}
+        <div class="card mx-auto mb-3" id={{product.id}} style="width: 25rem;">
+            <a href="{% url 'product_detail' pk=product.pk %}" ><img class="card-img-top" src="{{product.image.url}}" alt="Card image cap"></a>
+            <div class="card-body">
+                <p class="card-title text-center">{{product.name}}</p>
+                <p class="card-text text-center"><b>{{product.price|currency}}</b></p>
+                <!-- {{product | is_in_cart:request.session.cart }} -->
+            </div>
+
+            <div class="card-footer p-0 no-gutters">
+                <p class="">
+                    <center><a class="add-to-cart" href="{% url 'product_detail' pk=product.pk %}"><b>View Product</b></a></center>
+                </p>
+            </div>
+
+
+            </div>
+
+        {% endfor %}
+    </div>
+</div>
+    </div>
+</div>
+<script type="text/javascript">
+    function reveal()
+    {
+    if(document.getElementById('box').checked)
+       {document.getElementById("pw").type='text';}
+    else
+    document.getElementById("pw").type='password';
+    }
+    </script>   
+{% endblock %}

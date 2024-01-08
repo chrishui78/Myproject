@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+<style>
+h1 {
+    font-family: 'Montez';
+}
+
+
+</style>
+{% block content %}
+
+{% load static %}
+{% load cart %}
+{% load custom_filter %}
+<a  class="col-sm-1 pull-left" href="/store"><img src="{% static "store/arrow.png" %}" style="width: 50%;"></a>
+
+<div class="card mb-3" style="max-width: 1500px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        {% for product in products %}
+        <center><img src="{{ product.image.url }}" alt="product-name" style="max-width: 400px;"></center>
+        {% endfor %}
+      </div>
+      <div class="col-md-8">
+        {% for product in products %}
+        <div class="card-body">
+          <h1 class="card-title" style="font-family: Montez; font-size: 50px;">{{ product.name }}</h1>
+          <br><br><br>
+          <h5 class="card-text">Description :<br>{{ product.description }}</h5>
+          <br><br><br>
+          <h4>Acidity:
+            {% if product.acidity == 1 %}
+            <i class="fas fa-star rating-color"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            {% endif %}
+            {% if product.acidity == 2 %}
+            <i class="fas fa-star rating-color"></i>
+            <i class="fas fa-star rating-color"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            {% endif %}
+            {% if product.acidity == 3 %}
+            <i class="fas fa-star rating-color"></i>
+            <i class="fas fa-star rating-color"></i>
+            <i class="fas fa-star rating-color"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            {% endif %}
+            {% if product.acidity == 4 %}
+            <i class="fas fa-star rating-color"></i>
+            <i class="fas fa-star rating-color"></i>
+            <i class="fas fa-star rating-color"></i>
+            <i class="fas fa-star rating-color"></i>
+            <i class="fas fa-star"></i>
+            {% endif %}
+          </h4>
+          <br>
+          <h4>Price: {{ product.price|currency }}</h4>
+        <br><br><br><br><br><br>
+        {% if product|is_in_cart:request.session.cart %}
+        <div class="row">
+            <form action="/storepage#{{product.id}}" class="col-2" method="post">
+                {% csrf_token %}
+                <input hidden type="text" name='product' value='{{product.id}}'>
+                <input hidden type="text" name='remove' value='True'>
+                <input type="submit" value=" - " class="btn btn-block btn-success border-right">
+            </form>
+            <div class="text-center col-3 btn btn-block btn-success" style="width: 300px;height: 45px;margin-top: 20px;">{{ product|cart_quantity:request.session.cart }} in Cart</div>
+            <form action="/storepage#{{product.id}}" class="col-2" method="post">
+                {% csrf_token %}
+                <input hidden type="text" name='product' value='{{product.id}}'>
+                <input type="submit" value=" + " class="btn btn-block btn-success border-left">
+            </form>
+        </div>
+        {% else %}
+        <form action="/storepage#{{product.id}}" method="POST" class="btn-block">
+            {% csrf_token %}
+            <input hidden type="text" name='product' value='{{product.id}}'>
+            <input type="submit" class="float-right btn btn-primary form-control"
+                value="Add To Cart">
+        </form>
+        {% endif %}
+        </div>
+        {% endfor %}
+        </div>
+</div>
+</div>
+
+{% endblock %}

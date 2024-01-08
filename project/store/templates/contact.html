@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+{% load cart %}
+{% load custom_filter %}
+<div class="container">
+    <h2 id="Contactus" class="text-center mb-5">Contact Us</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <form method="POST">
+                {% csrf_token %}
+                <div class="form-group row">
+                    <label for="colFormLabelSm" class="col-sm-3 col-form-label ">Name</label>
+                    <div class="col-sm-9">
+                        <input type="name" class="form-control" id="colFormLabelSm"
+                            placeholder="Please enter your Name" name="name">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="colFormLabel" class="col-sm-3 col-form-label">Email</label>
+                    <div class="col-sm-9">
+                        <input type="email" class="form-control" id="colFormLabel" placeholder="e.g. xxx@xxx.com" name="email">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="colFormLabelLg" class="col-sm-3 col-form-label">Message</label>
+                    <div class="col-sm-9">
+                        <input type="message" class="form-control" id="colFormLabelLg"
+                            placeholder="Please left your message" name="message">
+                    </div>
+                </div>
+                <br>
+                <input type="submit" value="Submit" id="submitBtn" class="col-sm-12">
+            </form>
+        </div>
+        <!--Google Maps-->
+        <div class="col-md-6">
+
+            <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 300px;margin: 5%;">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.4753770159837!2d114.17189271108153!3d22.297854379603677!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x340400ee075d5521%3A0x7f88ad249eb42dbc!2s18%20Hanoi%20Rd%2C%20Tsim%20Sha%20Tsui!5e0!3m2!1sen!2shk!4v1685324180862!5m2!1sen!2shk"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

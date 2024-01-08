@@ -1,0 +1,30 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% block content %}
+
+
+<style>
+
+.center {
+    position: relative;
+    top: 5%;
+    width: 95%;
+    text-align: center;
+
+  }
+  
+  .img-t { 
+    width: 100%;
+    height: auto;
+    opacity: 0.3;
+    
+  }
+
+ 
+</style>
+
+<div class="center">
+    <img src="{% static 'store/Thanks_for_subscribe.jpg' %}" alt="">
+</div>
+
+{% endblock %}

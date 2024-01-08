@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+{% load cart %}
+{% load custom_filter %}
+<div class="about" id="about">
+    <h1 class="heading">Coffee Fancy<span>About Us</span></h1>
+    <br>
+    <!--para 1-->
+    <div class="row">
+        <div class="image reveal active">
+            <img src="https://images.pexels.com/photos/7125588/pexels-photo-7125588.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt="ORIGIN">
+        </div>
+        <div class="content">
+            <h1 class="title">ORIGIN</h1>
+            <p>Coffee Fancy was inspired by the classic and timeless quality of coffee.
+                We believe coffee is a beverage that has stood the test of time and has been enjoyed by people for
+                generations.
+                Our name also pays homage to the vintage coffee-making methods that have been used to create great
+                coffee for centuries.
+            </p>
+        </div>
+    </div>
+
+    <!--para 2-->
+    <div class="row">
+        <div class="content">
+            <h1 class="title">VALUE</h1>
+            <p>At Coffee Fancy, we are committed to providing our customers with exceptional quality coffee and
+                service.
+                We are passionate about what we do, and we want to share that passion with our customers.
+                We value sustainability, ethical practices, and transparency in everything we do.
+                Our customers can trust that they are getting the best coffee possible while also supporting a
+                company that cares about the environment andthe well-being of coffee farmers.
+            </p>
+        </div>
+        <div class="image reveal">
+            <img src="https://images.pexels.com/photos/4787628/pexels-photo-4787628.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                alt="value">
+        </div>
+    </div>
+
+    <!--para 3-->
+    <div class="row">
+        <div class="image reveal">
+            <img src="https://images.pexels.com/photos/4940774/pexels-photo-4940774.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt="culture">
+        </div>
+        <div class="content">
+            <h1 class="title">Culture</h1>
+            <p>At Coffee Fancy, we believe that coffee is more than just a beverage - it's a culture.
+                Our goal is to create a welcoming and inclusive space where coffee lovers can come together to share
+                their passion for coffee.
+                We believe that coffee has the power to bring people together and create community.
+            </p>
+        </div>
+
+    </div>
+
+    <!--para 4-->
+    <div class="row">
+        <div class="content">
+            <h1 class="title">Production</h1>
+            <p>We source only the finest coffee beans from around the world.
+                We work directly with farmers and co-ops to ensure the highest quality and ethical practices.
+                Our coffee is roasted in small batches to bring out the unique flavors and aromas of each bean.
+                We take pride in our commitment to sustainability and use eco-friendly packaging to reduce our
+                carbon footprint.
+            </p>
+        </div>
+        <div class="image reveal">
+            <img src="https://images.pexels.com/photos/1924955/pexels-photo-1924955.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt="culture">
+        </div>
+    </div>
+
+</div>
+
+
+
+
+<script src="{% static 'store/about.js' %}"></script>
+
+<!-- footer: including about us, location, contact, terms & policy, ig/youtube/facebook -->
+{% endblock %}

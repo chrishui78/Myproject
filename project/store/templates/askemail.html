@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+{% load cart %}
+{% load custom_filter %}
+<div class="container">
+   <div class="border rounded p-4 m-4">
+    <form action="/orders" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for=""> Enter E-mail to check order</label>
+          <input type="text" name="email" id="" class="form-control" placeholder="" aria-describedby="helpId">
+        <center><input type="submit" class="btn float-right btn-outline-success col-lg-6 " value="submit"></center>
+    </div>
+    </form>
+       
+   </div>
+</div>
+
+
+
+
+
+{% endblock %}

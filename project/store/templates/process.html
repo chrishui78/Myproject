@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% block title %}Pay using PayPal{% endblock %}
+
+{% block content %}
+<style>
+  .containers {
+    position: relative;
+  }
+  
+  .center {
+    position: absolute;
+    top: 20%;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+  }
+  
+  .img-s { 
+    width: 100%;
+    height: auto;
+    opacity: 0.3;
+    
+  }
+  .card {
+    border-radius: 15%;
+
+  }
+  </style>
+  </head>
+
+  
+  <div class="containers">
+    <img class="img-s" src='{% static 'store/Powerpoint.jpeg' %}' >
+    <div class="center">
+
+    <div class='payment'>
+    <div class="card mx-auto col-md-5 col-8 mt-3 p-0" >         
+        <h1>Pay using PayPal</h1><br>
+        <div class="card-title px-\">
+
+        <h1>Thank you very much for your puchase</h1>
+        </div>
+        <div class="card-body">
+            <p class="text-muted">Please click to pay</p>
+           
+        </div>
+        <div class="text-center p-0" style="position: relative;">
+            
+                <p class="order">{{ form.render }}</p>
+            
+        </div>
+    </div>
+    
+
+</div></div></div>
+{% endblock %}

@@ -1,0 +1,410 @@
+.navbar {
+  background-color:#ffffff;
+  text-align: center;
+  font-size: 18px;
+  font-family: monospace;
+  color: black;
+}
+
+#loginButton {
+  font-size: 18px;
+  background-color: #ffbb77;
+  color: rgb(18, 17, 17);
+  border: 2px;
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+}
+
+.carousel-inner img {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+
+
+.carousel-caption {
+  font-family:monospace;
+}
+
+.beansCategories {
+  font-size: 25px;
+  font-family: serif;
+  color: rgb(35, 34, 34);
+  background-color: white;
+  padding: 8px;
+  text-align: center;
+}
+
+.column {
+  float: left;
+  width: 33%;
+  padding: 0 10px;
+}
+
+
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  font-family: serif;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(55, 142, 235, 0.72);
+}
+
+.card img{
+  width: 100%;
+  max-width: 200px;
+  position: auto;
+}
+
+.container {
+  padding: 2px 16px;
+}
+
+.item {
+  text-align: center;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.footer {
+  margin-top: 150px;
+  width: 100%;
+  padding: 50px 50px; 
+  background: #a77b50;
+  color: #ffffff;
+  font-family: monospace;
+  display: flex;
+  align-items: flex-start;
+}
+
+.footer div {
+  margin: auto;
+  display: grid;
+  text-align: center;
+  padding: 20px;
+}
+
+.col-2 {
+  flex-grow: 2;
+  text-align: center;
+}
+
+.footer div h3 {
+  font-weight: 300;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+.col-1 a{
+  display: block;
+  text-decoration: none;
+  color: #efefef;
+  margin-bottom: 10px;
+}
+
+form input {
+  width:400px;
+  height:45px;
+  border-radius: 4px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  outline:none;
+  border:none;
+}
+
+form button {
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px 10px;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.social-icons {
+  margin-top: 30px;
+}
+
+.social-icons i {
+  font-size: 22px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+body {
+  margin-top: 5%;
+}
+
+
+.card-img-top {
+  width: 70%;
+  max-width: 200px;
+  padding: 5px;
+  position: relative;
+  left: calc(50% - 30%)
+}
+
+.product {
+  margin-bottom: 20px;
+}
+
+.product-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.product-price {
+  color: rgba(45, 0, 128, 0.89);
+  margin-bottom: 10px;
+}
+
+/* cart css*/
+.add-to-cart {
+  background-color: #1ca1dd;
+  border: none;
+  color: white;
+  padding: 10px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+
+.cart {
+  margin-top: 20px;
+}
+
+.cart-item {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.delete-item {
+  background-color: #f44336;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.cart-icon {
+  position: relative;
+  cursor: pointer;
+}
+
+.cart-icon img {
+  height: 30px;
+  width: 30px;
+}
+
+.cart-count {
+  position: relative;
+  top: -10px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+}
+
+.button_cart {
+  background-color: #af4c96; 
+  border: none;
+  color: rgb(9, 8, 8);
+  text-align: left;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button1 {padding: 16px;}
+
+
+/* rateing css*/
+.ratings {
+  margin-right: 10px;
+}
+
+.ratings i {
+  color: #cecece;
+  font-size: 32px;
+}
+
+.rating-color {
+  color: #fbc634 !important;
+}
+
+.review-count {
+  font-weight: 400;
+  margin-bottom: 2px;
+  font-size: 24px !important;
+}
+
+.small-ratings i {
+  color: #cecece;
+}
+
+.about {
+  margin-top: 6%;
+  text-align: center;
+  padding: 0;
+}
+
+.heading {
+  font-size: 70px;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: .3px #a77b50;
+  letter-spacing: .2px;
+  text-align: center;
+  pointer-events: none;
+  position: relative;
+}
+
+.heading span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  color: rgb(117, 69, 2);
+  font-size: 50px;
+  font-family: monospace;
+  font-weight: 1000;
+}
+
+.about .row {
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 20px 50px 20px 50px;
+}
+
+.about .row .image {
+  flex: 1 1;
+  margin-right: 0;
+  max-width: 50%;
+  padding: 0;
+}
+
+.about .row .image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12%;
+}
+
+.reveal {
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+.reveal.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.about .row .content {
+  flex: 1 1;
+  width: 50%;
+  max-width: 700px;
+  padding: 2px;
+}
+
+.about .row .content h1 {
+  font-family: monospace;
+  font-size: 35px;
+  letter-spacing: .2px;
+  text-decoration: underline;
+}
+
+.about .row .content p {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 20px;
+  word-spacing: 1.5px;
+}
+
+/* Search Button */
+
+.searchBox {
+  
+  top: 50%;
+  left: 50%;
+  transform:  translate(-50%,50%);
+  background: #2f3640;
+  height: 40px;
+  border-radius: 40px;
+  padding: 10px;
+
+}
+
+.searchBox:hover > .searchInput {
+  width: 240px;
+  padding: 0 6px;
+}
+
+.searchBox:hover > .searchButton {
+background: white;
+color : #2f3640;
+}
+
+.searchButton {
+  color: white;
+  float: right;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #2f3640;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s;
+}
+
+.searchInput {
+  border:none;
+  background: none;
+  outline:none;
+  float:left;
+  padding: 0;
+  color: white;
+  font-size: 16px;
+  transition: 0.4s;
+  line-height: 40px;
+  width: 0px;
+
+}
+

@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+<head>
+    <meta http-equiv="refresh" content="30">
+</head>
+{% block content %}
+<style>
+.row {
+  margin: 0 10% 0 10%;
+  max-width: 80%;
+}
+
+.carousel-caption p,h1 {
+    background: linear-gradient(to right, rgba(255,255,255,0), rgb(8, 0, 0),rgba(255,255,255,0));
+}
+
+</style>
+{% load static %}
+{% load cart %}
+{% load custom_filter %}
+<!-- body -->
+
+    <div id="homePhoto" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+            <li data-target="#homePhoto" data-slide-to="0" class="active"></li>
+            <li data-target="#homePhoto" data-slide-to="1"></li>
+            <li data-target="#homePhoto" data-slide-to="2"></li>
+            <li data-target="#homePhoto" data-slide-to="3"></li>
+        </ul>
+<div class="carousel-inner">
+    <div class="carousel-item active">
+        <img src="{% static 'home/home_carousel_roasting.jpeg' %}" alt="Freshly Roasting">
+        <div class="carousel-caption">
+            <h1>Freshly Roasting</h1>
+            <p >Our expertly roasted beans are carefully crafted to bring out rich, bold flavors with every sip.
+                <br>
+                From the moment you open the bag, you'll be greeted with an enticing aroma that will awaken your
+                senses. <br>
+                Perfect for coffee lovers who crave a smooth, flavorful brew. <br>
+                Order now and experience the difference in every cup.
+            </p>
+        </div>
+    </div>
+
+    <div class="carousel-item">
+        <img src="{% static 'home/home_carousel_brewing.jpg' %}" alt="Excellent Brewing">
+        <div class="carousel-caption">
+            <h1>Excellent Brewing</h1>
+            <p>Nothing beats the aroma of freshly brewed coffee in the morning!<br>
+                Our premium coffee beans are expertly roasted and carefully brewed to perfection,<br>
+                ensuring every cup is packed with bold flavor and rich aromas.<br>
+                Whether you prefer a classic drip or a rich espresso shot, our coffee is sure to satisfy your
+                cravings.<br>
+                Order now and start your day off right!</p>
+        </div>
+    </div>
+
+    <div class="carousel-item">
+        <img src="{% static 'home/home_carousel_communities.jpeg' %}" alt="Leasure Moment">
+        <div class="carousel-caption">
+            <h1>Leasure Moment</h1>
+            <p>Gather your friends and share a cup of our expertly crafted coffee!<br>
+                Our premium blends are the perfect addition to any get-together, whether it's a casual brunch or
+                a formal dinner party.<br>
+                With rich, bold flavors that satisfy even the most discerning of coffee lovers, our coffee will
+                be the centerpiece of your next gathering.<br>
+                Order now and make your next coffee time with friends unforgettable!</p>
+        </div>
+    </div>
+
+    <div class="carousel-item">
+        <img src="{% static 'home/home_carousel_food.jpeg' %}" alt="Best Match!">
+        <div class="carousel-caption">
+            <h1>Best Match!</h1>
+            <p>Looking for the perfect pairing for your favorite foods? Look no further than our expertly
+                roasted coffee blends!<br>
+                From rich, dark roasts to smooth and creamy blends, our coffee is the ideal complement to any
+                meal.<br>
+                Whether you're enjoying a hearty breakfast or a decadent dessert, our coffee will elevate the
+                flavors and leave you wanting more.<br>
+                Order now and discover the perfect match for your favorite foods!</p>
+        </div>
+    </div>
+	<a class="carousel-control-prev" href="#homePhoto" data-slide="prev">
+		<span class="carousel-control-prev-icon"></span>
+	</a>
+	<a class="carousel-control-next" href="#homePhoto" data-slide="next">
+		<span class="carousel-control-next-icon"></span>
+	</a>
+</div>
+</div>
+
+
+<div class="container-fluid mt-3">
+	<div class="row">
+
+		<div>
+            <p class="beansCategories">HOT ITEMS</p>
+        </div>
+    </div>
+	
+		<!-- hot products -->
+		<div id='products' class="col-lg-12 mx-auto">
+			<div class="row mx-auto">
+				{% for product in hot_item %}
+				<div class="card mx-auto mb-4" id={{product.id}} style="width: 25rem;">
+					<a href="{% url 'product_detail' pk=product.pk %}" ><img class="card-img-top" src="{{product.image.url}}" alt="Card image cap"></a>
+					<div class="card-body">
+						<p class="card-title text-center">{{product.name}}</p>
+						<p class="card-text text-center"><b>{{ product.price|currency }}</b></p>
+						<!-- {{product | is_in_cart:request.session.cart }} -->
+						<p class="addToCart">
+							<center><a class="btn btn-primary" href="{% url 'product_detail' pk=product.pk %}">View product</a></center>
+						</p>
+					</div>
+				</div>
+
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+{% endblock %}
